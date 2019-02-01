@@ -1,8 +1,11 @@
 ﻿#include <iostream>
 #include "colori.h"
 #include <string>
+#include <Windows.h>
 
 using namespace std;
+
+
 
 string square[10] = { "o","1","2","3","4","5","6","7","8","9" };
 
@@ -19,6 +22,7 @@ string p1c, p2c;
 
 int main()
 {
+	SetConsoleTitle(TEXT("TIC TAC TOE | Made by @Fede.Tensi"));
 
 	int player = 1, i, choice;
 
@@ -52,11 +56,11 @@ int main()
 		//mark = (player == 1) ? "X" : "O";
 		if (player == 1)
 		{
-			mark = p1c + "X";
+			mark = p1c + "X" + "\033[00m";
 		}
 		else
 		{
-			mark = p2c + "O";
+			mark = p2c + "O" + "\033[00m";
 		}
 
 		if (choice == 1 && square[1] == "1")
